@@ -64,15 +64,10 @@ def signup_for_activity(activity_name: str, email: str):
     # ============================================================
     # UAT-LOCKED: This route has passed UAT. DO NOT MODIFY.
     # ============================================================
-    # Validate activity exists
     if activity_name not in activities:
         raise HTTPException(status_code=404, detail="Activity not found")
 
-    # Get the specific activity
-    activity = activities[activity_name]
-
-    # Add student
-    activity["participants"].append(email)
+    activities[activity_name]["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
 
 # M4 DEBUG LAB — intentionally broken
