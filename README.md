@@ -30,6 +30,17 @@ testazhar/
 
 ## Getting Started
 
+### Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it:
+
+- **Windows:** `.venv\Scripts\activate`
+- **macOS/Linux:** `source .venv/bin/activate`
+
 ### Install dependencies
 
 ```bash
