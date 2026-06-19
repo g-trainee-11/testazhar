@@ -1,16 +1,65 @@
-# Getting Started with GitHub Copilot
+# Mergington High School — Extracurricular Activities API
 
-<img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
+A lightweight FastAPI application that lets students at Mergington High School browse and sign up for extracurricular activities through a simple web interface.
 
-Hey ibnehussain!
+## About
 
-Mona here. I'm done preparing your exercise. Hope you enjoy! 💚
+The app exposes a REST API backed by an in-memory activity store. A static HTML/CSS/JS front-end is served alongside the API, allowing students to:
 
-Remember, it's self-paced so feel free to take a break! ☕️
+- View all available extracurricular activities (name, description, schedule, capacity, and current participants)
+- Sign up for an activity using their school email address
 
-[![](https://img.shields.io/badge/Go%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/ibnehussain/testazhar/issues/1)
+Activities currently offered: **Chess Club**, **Programming Class**, and **Gym Class**.
 
----
+## Project Structure
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+```
+testazhar/
+├── pytest.ini                  # Pytest configuration
+├── requirements.txt            # Python dependencies
+├── src/
+│   ├── app.py                  # FastAPI application and API routes
+│   ├── static/
+│   │   ├── index.html          # Main web page
+│   │   ├── app.js              # Front-end JavaScript (fetches API, handles signup form)
+│   │   └── styles.css          # Page styles
+│   └── tests/
+│       └── test_app.py         # API tests (pytest + FastAPI TestClient)
+└── README.md
+```
 
+## Getting Started
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the development server
+
+```bash
+uvicorn src.app:app --reload
+```
+
+Then open [http://localhost:8000](http://localhost:8000) in your browser.
+
+### Run tests
+
+```bash
+pytest src/tests/test_app.py -v
+```
+
+## API Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/` | Redirects to the web UI |
+| `GET` | `/activities` | Returns all activities and their details |
+| `POST` | `/activities/{activity_name}/signup?email=...` | Signs a student up for an activity |
+
+## Tech Stack
+
+- **[FastAPI](https://fastapi.tiangolo.com/)** — API framework
+- **[Uvicorn](https://www.uvicorn.org/)** — ASGI server
+- **[pytest](https://pytest.org/)** — Test framework
