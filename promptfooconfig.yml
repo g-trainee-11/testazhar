@@ -20,11 +20,10 @@ tests:
       - type: not-contains
         value: "def get_activities"
 
-  - description: "Output does NOT contain modification of signup"
+  - description: "Output does NOT include the existing signup route"
     assert:
       - type: not-contains
-        value: "def signup"
-
+        value: "def signup_for_activity"
   - description: "Output uses jsonify"
     assert:
       - type: contains
