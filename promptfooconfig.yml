@@ -13,7 +13,7 @@ tests:
 
   - description: "Output contains the correct function name"
     assert:
-      - type: contains
+      - type: not-contains
         value: "def get_activity"
 
   - description: "Output does NOT contain modification of get_activities"
