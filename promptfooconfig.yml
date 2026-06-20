@@ -1,12 +1,13 @@
 # promptfooconfig.yaml
 prompts:
   - |
-    Add a new Flask route function called get_activity to src/app.py.
-    Return the activity details as JSON (200) or {"error": "not found"} (404).
-    Add below remove_signup().  Use jsonify(). Do not add new imports.
+
+    Add a new FastAPI route function called get_activity to src/app.py.
+    Return the activity details as a JSON object (200) or raise HTTPException(status_code=404, detail="Activity not found").
+    Place the new route below signup_for_activity(). Use existing imports only; do not add new imports. Output only the new route + function.
 
 providers:
-  - openai:gpt-4o   # or your available model
+  - id: github:gpt-4.1        # or github:gpt-4o-mini for lower cost
 
 tests:
 
