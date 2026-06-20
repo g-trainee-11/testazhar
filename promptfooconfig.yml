@@ -1,0 +1,34 @@
+# promptfooconfig.yaml
+prompts:
+  - |
+    Add a new Flask route function called get_activity to src/app.py.
+    Return the activity details as JSON (200) or {"error": "not found"} (404).
+    Add below remove_signup(). Use jsonify(). Do not add new imports.
+
+
+tests:
+
+  - description: "Output contains the correct function name"
+    assert:
+      - type: contains
+        value: "def get_activity"
+
+  - description: "Output does NOT contain modification of get_activities"
+    assert:
+      - type: not-contains
+        value: "def get_activities"
+
+  - description: "Output does NOT contain modification of signup"
+    assert:
+      - type: not-contains
+        value: "def signup"
+
+  - description: "Output uses jsonify"
+    assert:
+      - type: contains
+        value: "jsonify"
+
+  - description: "Output returns 404 for not found"
+    assert:
+      - type: contains
+        value: "404"
