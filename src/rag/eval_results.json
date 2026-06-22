@@ -1,0 +1,49 @@
+{
+  "model": "gpt-4o-mini",
+  "average_faithfulness": 1.0,
+  "test_cases": [
+    {
+      "query": "how many people can join chess club",
+      "reference": "12",
+      "answer": "Max 12 participants.",
+      "contexts": [
+        "Chess Club: Weekly chess tournament for students. Max 12 participants. Runs every Thursday.",
+        "Drama Club: Performance preparation and script reading. Max 20 participants. Runs Tuesday."
+      ],
+      "faithfulness_score": 1.0
+    },
+    {
+      "query": "when does basketball practice run",
+      "reference": "Monday",
+      "answer": "Basketball practice runs on Monday and Wednesday.",
+      "contexts": [
+        "Basketball Team: Competitive basketball practice and matches. Max 10 participants. Runs Monday and Wednesday.",
+        "Morning Run: Daily 5km group run around the school grounds. Max 30 participants. No registration required.",
+        "Art Workshop: Creative art sessions covering painting and sculpture. Max 15 participants. Runs Friday."
+      ],
+      "faithfulness_score": 1.0
+    },
+    {
+      "query": "morning run maximum participants",
+      "reference": "30",
+      "answer": "30 participants.",
+      "contexts": [
+        "Morning Run: Daily 5km group run around the school grounds. Max 30 participants. No registration required.",
+        "Art Workshop: Creative art sessions covering painting and sculpture. Max 15 participants. Runs Friday.",
+        "Basketball Team: Competitive basketball practice and matches. Max 10 participants. Runs Monday and Wednesday."
+      ],
+      "faithfulness_score": 1.0
+    },
+    {
+      "query": "is there a daily activity",
+      "reference": "Daily",
+      "answer": "Yes, there is a daily activity.",
+      "contexts": [
+        "Morning Run: Daily 5km group run around the school grounds. Max 30 participants. No registration required."
+      ],
+      "faithfulness_score": 1.0
+    }
+  ],
+  "threshold": 0.85,
+  "passed": true
+}
